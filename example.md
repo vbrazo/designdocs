@@ -45,28 +45,28 @@ Some of the characteristics of this design:
 ### Proposal
 
 <pre>      
-+------------------------+  +---------------------+   +-----------------------+
-|                        |  |                     |   |                       |
-|  Identity              |  | Authentication      |   |Authorization          |
-|                        |  |                     |   |                       |
-| +------------------+   |  | +-----------------+ |   | +-------------------+ |
-| |                  |   |  | |                 | |   | |                   | |
-| | Admin            |   |  | | User            | |   | | Permission        | |
-| |                  |   |  | |                 | |   | |                   | |
-| +------------------+   |  | +-----------------+ |   | +-------------------+ |
-|                        |  |                     |   |                       |
-| +------------------+   |  |                     |   | +-------------------+ |
-| |                  |   |  |                     |   | |                   | |
-| | User             |   |  |                     |   | | Resource          | |
-| |                  |   |  |                     |   | |                   | |
-| +------------------+   |  |                     |   | +-------------------+ |
-|                        |  |                     |   |                       |
-| +------------------+   |  |                     |   |                       |
-| |                  |   |  |                     |   |                       |
-| |  Account         |   |  |                     |   |                       |
-| |                  |   |  |                     |   |                       |
-| +------------------+   |  |                     |   |                       |
-+------------------------+  +---------------------+   +-----------------------+
++---------------------------+  +-----------------------+   +-----------------------+
+|                           |  |                       |   |                       |
+|  Identity Engine          |  | Authentication Engine |   |Authorization Engine   |
+|                           |  |                       |   |                       |
+| +------------------+      |  | +-----------------+   |   | +-------------------+ |
+| |                  |      |  | |                 |   |   | |                   | |
+| | Admin            |      |  | | User            |   |   | | Permission        | |
+| |                  |      |  | |                 |   |   | |                   | |
+| +------------------+      |  | +-----------------+   |   | +-------------------+ |
+|                           |  |                       |   |                       |
+| +------------------+      |  |                       |   | +-------------------+ |
+| |                  |      |  |                       |   | |                   | |
+| | User             |      |  |                       |   | | Resource          | |
+| |                  |      |  |                       |   | |                   | |
+| +------------------+      |  |                       |   | +-------------------+ |
+|                           |  |                       |   |                       |
+| +------------------+      |  |                       |   |                       |
+| |                  |      |  |                       |   |                       |
+| |  Account         |      |  |                       |   |                       |
+| |                  |      |  |                       |   |                       |
+| +------------------+      |  |                       |   |                       |
++---------------------------+  +-----------------------+   +-----------------------+
 </pre>
 
 The solution consists of split the Authentication domain into three parts, also create three engines to separate these concerns:
@@ -105,7 +105,7 @@ The Authorization is responsible for managing which resources Admin and users ca
 
 ### Business Rules
 
-As a Admin, I want to add a second parent to give them equal access to my users' accounts.
+As a Admin, I want to add a second admin to give them equal access to my users' accounts.
 
 ### Compliance impact (if applicable)
 NA
